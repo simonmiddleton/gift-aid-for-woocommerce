@@ -116,6 +116,7 @@ class Checkout {
 				'class'     => array( 'input-checkbox' ),
 				'label'     => esc_html( $gift_aid_label ),
 				'required'  => false,
+                                'default'   => 1,
 			), $checkout->get_value( 'gift_aid_reclaimed' ) );
 
 			// Create a nonce that we can use in update_order_meta().
