@@ -91,7 +91,8 @@ class Checkout {
 		$gift_aid_label       = get_option( 'gift_aid_label' );
 
 		// If the country code is 'GB' and all the settings have been configured.
-		if ( ! empty( $gift_aid_checkbox ) && ! empty( $gift_aid_label ) && ! empty( $gift_aid_description ) ) {
+		if ( ! empty( $gift_aid_checkbox ) && ! empty( $gift_aid_label ) && ! empty( $gift_aid_description )
+             && apply_filters( 'wc-gift-aid-add-gift-aid', true ) ) {
 
 			// If no heading has been set, we'll need a sensible default.
 			if ( empty( $gift_aid_heading ) ) {
