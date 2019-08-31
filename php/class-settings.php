@@ -117,6 +117,15 @@ class Settings {
 			);
 
 			$settings_gift_aid[] = array(
+				'title'  => __( 'Intro', 'gift-aid-for-woocommerce' ),
+				'type'  => 'textarea',
+				'desc'  => __( 'Text introducing Gift Aid to the donor.', 'gift-aid-for-woocommerce' ),
+				'desc_tip' => true,
+				'id'    => 'gift_aid_intro',
+				'class' => 'gift-aid-intro',
+			);
+
+			$settings_gift_aid[] = array(
 				'title'  => __( 'Checkbox Label', 'gift-aid-for-woocommerce' ),
 				'type'  => 'text',
 				'desc'  => __( 'Label for the checkbox. Must be populated in order for the Gift Aid option to appear at the checkout.', 'gift-aid-for-woocommerce' ),

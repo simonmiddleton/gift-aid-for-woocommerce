@@ -87,6 +87,7 @@ class Checkout {
 		// Fetch our settings data.
 		$gift_aid_checkbox    = get_option( 'gift_aid_checkbox' );
 		$gift_aid_heading     = get_option( 'gift_aid_heading' );
+		$gift_aid_intro       = get_option( 'gift_aid_intro' );
 		$gift_aid_description = get_option( 'gift_aid_info' );
 		$gift_aid_label       = get_option( 'gift_aid_label' );
 
@@ -105,9 +106,9 @@ class Checkout {
 			// Output the heading.
 			echo '<h3 id="gift-aid-heading">' . esc_html( $gift_aid_heading ) . '</h3>';
 
-			// Output the information.
-			if ( ! empty( $gift_aid_description ) ) {
-				echo '<div id="gift-aid-description">' . wp_kses_post( wpautop( $gift_aid_description ) ) . '</div>';
+			// Output the intro
+			if ( ! empty( $gift_aid_intro ) ) {
+				echo '<div id="gift-aid-intro">' . wp_kses_post( wpautop( $gift_aid_intro ) ) . '</div>';
 			}
 
 			// Echo the checkbox field with label text.
@@ -118,6 +119,11 @@ class Checkout {
 				'required'  => false,
                                 'default'   => 1,
 			), $checkout->get_value( 'gift_aid_reclaimed' ) );
+
+			// Output the information.
+			if ( ! empty( $gift_aid_description ) ) {
+				echo '<div id="gift-aid-description">' . wp_kses_post( wpautop( $gift_aid_description ) ) . '</div>';
+			}
 
 			// Create a nonce that we can use in update_order_meta().
 			wp_nonce_field( 'giftaidnonce_order', 'giftaid_order_security' );
