@@ -65,7 +65,7 @@ class Checkout {
 	 */
 	public function run() {
 		// Add the fields to the checkout.
-		add_action( 'woocommerce_after_order_notes', array( $this, 'insert_html' ), 10 );
+		add_action( 'woocommerce_checkout_after_customer_details', array( $this, 'insert_html' ), 10 );
 
 		// AJAX hooks for front-end HTML generation.
 		add_action( 'wp_ajax_add_to_checkout', array( $this, 'add_to_checkout' ), 10 );
